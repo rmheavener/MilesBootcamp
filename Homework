@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS Taverns, Locations, Users, Roles, BasementRats, Supplies, Services, ServiceStatus, Sales;

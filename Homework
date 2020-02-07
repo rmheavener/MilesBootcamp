@@ -1,1 +1,43 @@
 DROP TABLE IF EXISTS Taverns, Locations, Users, Roles, BasementRats, Supplies, Services, ServiceStatus, Sales;
+
+CREATE TABLE Taverns (
+    TavernsID INT IDENTITY (1,1)
+    TavernName varchar (250)
+    LocationID INT
+    OwnerID INT (1,1)
+);
+
+CREATE TABLE Locations (
+    LocationID INT (1,1)
+    LocationName varchar (250)
+);
+
+    ALTER TABLE Taverns ADD FOREIGN KEY (LocationID) References Locations(LocationID);   
+
+CREATE TABLE Guests (
+    GuestID INT (1,1)
+    GuestName varchar (250)
+    Notes varchar (500)
+    Birthday DATETIME
+    Cakeday DATETIME
+)
+
+CREATE TABLE Status (
+    StatusID INT
+    Status varchar (50)
+)
+
+CREATE TABLE Class (
+    ClassID INT
+    ClassName varchar (50)
+)
+
+CREATE TABLE GuestClass (
+    GuestID
+    StatusID
+    ClassID
+    ClassLevel INT
+)
+
+ALTER TABLE GuestClass ADD FOREIGN KEY (GuestID) References Guests (GuestID)
+ 
